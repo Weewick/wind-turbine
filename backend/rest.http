@@ -1,0 +1,23 @@
+GET  http://localhost:3370/count
+###
+GET  http://localhost:3370/coordinates?from=1980-01-01&to=2020-01-01&approved=true&inUse=true
+###
+GET  http://localhost:3370/getById?wkaId=106866800004001
+###
+GET  http://localhost:3370/graph1?from=1980-12-02&to=2020-12-02&approved=true&inUse=true
+###
+GET  http://localhost:3370/graph2?from=1980-01-01&to=2020-01-01&approved=true&inUse=true
+###
+GET  http://localhost:3370/graph3?from=1980-01-01&to=2020-01-01&approved=true&inUse=false
+###
+GET  http://localhost:3370/graph4?from=1980-01-01&to=2020-01-01&approved=true&inUse=true
+###
+GET  http://localhost:3370/graph5?from=2015-01-01&to=2020-01-01&approved=true&inUse=true
+###
+GET  http://localhost:3370/dates_g
+###
+GET  http://localhost:3370/dates_i
+###
+GET  http://localhost:3370/dates_a
+
+

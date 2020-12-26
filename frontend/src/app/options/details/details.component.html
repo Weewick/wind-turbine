@@ -1,0 +1,17 @@
+<div class="list">
+  <div id="description">
+    <mat-card class="custom" *ngFor="let key of arrayOfKeys">
+      <mat-card-title *ngFor="let data of data">
+        {{ key }}:
+      </mat-card-title>
+    </mat-card>
+  </div>
+  <div id="value">
+    <mat-card class="custom" *ngFor="let key of arrayOfKeys">
+      <mat-card-title *ngFor="let data of data">
+        {{ data[key] }}
+      </mat-card-title>
+    </mat-card>
+  </div>
+</div>
+

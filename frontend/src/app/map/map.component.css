@@ -1,0 +1,55 @@
+.map-container {
+  width: 45%;
+  height: calc(50vw * 0.6);
+  position: absolute;
+  padding: 20px;
+}
+
+.map-frame {
+  border: 3px solid gray;
+  height: 100%;
+  width: 100%;
+}
+
+#filter {
+  width: 100%;
+}
+
+#map {
+  height: 100%;
+  color: black;
+  font-family: Helvetica, Arial, sans-serif;
+  zoom: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .map-container {
+    width: 80%;
+    height: 50vw;
+    position: absolute;
+    padding: 20px;
+  }
+
+  #map {
+    height: 100%;
+    color: black;
+    font-family: Helvetica, Arial, sans-serif;
+    zoom: 110%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .map-container {
+    width: 80%;
+    height: 100vw;
+    position: absolute;
+    padding: 20px;
+  }
+
+  #map {
+    height: 100%;
+    color: black;
+    font-family: Helvetica, Arial, sans-serif;
+    zoom: 80%;
+  }
+}

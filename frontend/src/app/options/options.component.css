@@ -1,0 +1,40 @@
+#tabs {
+  position: absolute;
+  width: 45%;
+  left: 52%;
+  padding: 20px;
+}
+
+/* Styles for tab labels */
+.mat-tab-label {
+  color:  #333333;
+  font-size: calc(0.5vw + 9px);
+  font-weight: normal;
+}
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+  color: #C73C35;
+  font-size: calc(0.6vw + 10px);
+  font-weight: bolder;
+}
+
+@media only screen and (max-width: 1200px) {
+  #tabs {
+    position: absolute;
+    width: 90%;
+    left: 0;
+    top: calc(50vw + 300px);
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #tabs {
+    position: absolute;
+    width: 90%;
+    left: 0;
+    top: calc(100vw + 400px);
+    padding: 20px;
+  }
+}

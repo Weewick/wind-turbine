@@ -1,0 +1,136 @@
+<mat-accordion displayMode="flat">
+  <ng-template matTabContent></ng-template>
+  <mat-expansion-panel id="panel" hideToggle>
+    <mat-expansion-panel-header class="header">
+      <mat-panel-title>
+        Statistik 1
+      </mat-panel-title>
+      <mat-panel-description>
+        Gesamtleistung in Megawatt
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <ng-template matExpansionPanelContent>
+      <div id="chart">
+        <ngx-charts-area-chart
+          [scheme]="colorScheme"
+          [legend]="legend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxis]="xAxis"
+          [yAxis]="yAxis"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          [timeline]="timeline"
+          [legendTitle]="legendTitle"
+          [results]="powerGraphs">
+        </ngx-charts-area-chart>
+      </div>
+    </ng-template>
+  </mat-expansion-panel>
+  <mat-expansion-panel id="panel" hideToggle>
+    <mat-expansion-panel-header class="header">
+      <mat-panel-title>
+        Statistik 2
+      </mat-panel-title>
+      <mat-panel-description>
+        Nabenhöhe im Verhältnis zum Rotordurchmesser
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <ng-template matExpansionPanelContent>
+      <div id="chart">
+        <ngx-charts-bubble-chart
+          [scheme]="colorScheme2"
+          [legend]="legend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxis]="xAxis"
+          [yAxis]="yAxis"
+          [xAxisLabel]="xAxisLabel2"
+          [yAxisLabel]="yAxisLabel2"
+          [xScaleMin]="xScaleMin"
+          [yScaleMin]="yScaleMin"
+          [minRadius]="minRadius"
+          [maxRadius]="maxRadius"
+          [legendTitle]="legendTitle"
+          [results]="heightDiameterGraph">
+        </ngx-charts-bubble-chart>
+      </div>
+    </ng-template>
+  </mat-expansion-panel>
+  <mat-expansion-panel id="panel" hideToggle>
+    <mat-expansion-panel-header class="header">
+      <mat-panel-title>
+        Statistik 3
+      </mat-panel-title>
+      <mat-panel-description>
+        Top 10 - Gebiete mit meisten Anlagen/ größter Leistung
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <ng-template matExpansionPanelContent>
+      <div id="chart">
+        <ngx-charts-bar-vertical-2d
+          [scheme]="colorScheme"
+          [barPadding]="barPadding"
+          [legend]="legend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxis]="xAxis"
+          [yAxis]="yAxis"
+          [xAxisLabel]="xAxisLabel3"
+          [yAxisLabel]="yAxisLabel3"
+          [legendTitle]="legendTitle"
+          [results]="topTenGraph">
+        </ngx-charts-bar-vertical-2d>
+      </div>
+    </ng-template>
+  </mat-expansion-panel>
+  <mat-expansion-panel id="panel" hideToggle>
+    <mat-expansion-panel-header class="header">
+      <mat-panel-title>
+        Statistik 4
+      </mat-panel-title>
+      <mat-panel-description>
+        Boxplot - Baudauer in Tagen
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <ng-template matExpansionPanelContent>
+      <bd2-ngx-hbox-plot
+        [data]="boxPlotGraph" 
+        [palette]="palette" 
+        [labels]="labels" 
+        [domain]="domain" 
+        [lookAndFeel]="lookAndFeel">
+      </bd2-ngx-hbox-plot>
+    </ng-template>
+  </mat-expansion-panel>
+  <mat-expansion-panel id="panel" hideToggle>
+    <mat-expansion-panel-header class="header">
+      <mat-panel-title>
+        Statistik 5
+      </mat-panel-title>
+      <mat-panel-description>
+        Baudauer in Tagen
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <ng-template matExpansionPanelContent>
+      <div id="chart">
+        <ngx-charts-line-chart
+          [scheme]="colorScheme"
+          [legend]="legend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxis]="xAxis"
+          [yAxis]="yAxis"
+          [xAxisLabel]="xAxisLabel4"
+          [yAxisLabel]="yAxisLabel4"
+          [timeline]="timeline"
+          [legendTitle]="legendTitle"
+          [results]="buildTimeGraph">
+        </ngx-charts-line-chart>
+      </div>
+    </ng-template>
+  </mat-expansion-panel>
+</mat-accordion>
+<div id="filter">
+  <app-statistics-filter></app-statistics-filter>
+</div>

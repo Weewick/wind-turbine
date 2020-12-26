@@ -1,0 +1,21 @@
+mat-toolbar {
+  width: 100%;
+  height: 40px;
+  margin-top: calc(100vh + 200px);
+}
+
+@media only screen and (max-width: 1200px) {
+  mat-toolbar {
+    width: 100%;
+    height: 40px;
+    margin-top: calc(200vh + 350px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  mat-toolbar {
+    width: 100%;
+    height: 40px;
+    margin-top: calc(200vh + 350px);
+  }
+}

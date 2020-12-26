@@ -1,0 +1,55 @@
+.filter {
+  display: flex;
+}
+
+.field {
+  font-size: 12px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  height: 40px;
+}
+
+#datefield {
+  width: 220px;
+}
+
+#checkfield {
+  width: 130px;
+}
+
+#buttonfield {
+  display: flex;
+  width: 200px;
+}
+
+button {
+  width: 120px !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .filter {
+    display: block;
+  }
+
+  .field {
+    font-size: 14px;
+    margin-bottom: 20px;
+    height: 40px;
+  }
+  
+  #datefield {
+    width: 260px
+  }
+  
+  #checkfield {
+    width: 170px
+  }
+
+  button {
+    width: 140px !important;
+  }
+  
+  #buttonfield {
+    width: 240px
+  }
+}

@@ -1,0 +1,53 @@
+<form (submit)="submitFilter(filterForm)" #filterForm="ngForm">
+  <div class="filter">
+    <mat-form-field class="field" id="datefield" appearance="outline" color="primary">
+      <mat-label>Datumsbereich eingeben</mat-label>
+      <mat-date-range-input [rangePicker]="picker" min="1980-01-01" max="{{ toDate }}">
+        <input
+          matStartDate
+          name="from"
+          [ngModel]="fromDate"
+          placeholder="Von"
+          required
+          #from="ngModel">
+        <input
+          matEndDate
+          name="to"
+          [ngModel]="toDate"
+          placeholder="Bis"
+          required
+          #to="ngModel">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+      
+      <mat-error *ngIf="!from.valid&&to.valid">Ungültiges Anfangsdatum (DD.MM.YYYY)</mat-error>
+      <mat-error *ngIf="!to.valid&&from.valid">Ungültiges Enddatum (DD.MM.YYYY)</mat-error>
+      <mat-error *ngIf="!to.valid&&!from.valid">Ungültiger Datumsbereich (Von kleiner Bis)</mat-error>
+    </mat-form-field>
+    <div class="field" id="checkfield">
+      <mat-checkbox
+        name="approved"
+        color="primary"
+        [ngModel]="true"
+        required
+        #approved="ngModel">Genehmigte WKAs</mat-checkbox>
+      <mat-checkbox
+        name="inUse"
+        color="primary"
+        [ngModel]="true"
+        required
+        #inUse="ngModel">Gebaute WKAs</mat-checkbox>
+    </div>
+    <div id="buttonfield">
+      <button
+        mat-raised-button
+        class="field"
+        id="buttonfield"
+        color="primary"
+        [disabled]="!from.valid||!to.valid||(loaderService.isLoading | async)"
+        type="submit">Filter anwenden</button>
+      <mat-spinner class="field" *ngIf="loaderService.isLoading | async" [diameter]="40"></mat-spinner>
+    </div>
+  </div>
+</form>
